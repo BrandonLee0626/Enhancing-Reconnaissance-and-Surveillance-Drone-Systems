@@ -33,3 +33,11 @@ class Drone(Tello):
 
         if keys[pygame.K_RETURN]:
             self.land()
+
+    def video_show(self, screen):
+        while True:
+            frame = self.frame
+            surface = pygame.surfarray.make_surface(frame.swapaxes(0, 1))
+
+            screen.blit(surface, (0, 0))
+            pygame.display.flip()
