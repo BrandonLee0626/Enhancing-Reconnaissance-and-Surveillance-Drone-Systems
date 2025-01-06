@@ -15,4 +15,5 @@ pip install opencv-contrib-python
 conda install --yes -c pytorch pytorch=1.7.1 torchvision cpuonly
 pip install ftfy regex tqdm
 pip install git+https://github.com/openai/CLIP.git
-pip install pygame```
+pip install pygame
+```
