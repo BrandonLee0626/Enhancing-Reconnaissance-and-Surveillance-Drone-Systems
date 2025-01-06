@@ -5,7 +5,7 @@ import numpy as np
 class Drone(Tello):
     def __init__(self):
         super().__init__()
-        if self.stream_on():
+        if self.stream_on:
             self.frame = self.get_frame_read().frame
         else:
             self.frame = np.zeros((720, 920, 3), dtype=np.uint8)
