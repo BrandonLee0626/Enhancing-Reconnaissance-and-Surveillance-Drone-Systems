@@ -27,7 +27,7 @@ if drone_available:
     screen.blit(surface, (0, 0))
     pygame.display.flip()
 
-    video_thread = threading.Thread(target=drone.video_show, args=screen)
+    video_thread = threading.Thread(target=drone.video_show, args=(screen, model, ))
     video_thread.start()
 
     drone.takeoff()
