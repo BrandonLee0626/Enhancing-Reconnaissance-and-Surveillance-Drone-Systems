@@ -1,6 +1,5 @@
 from djitellopy.tello import Tello
 import pygame
-import numpy as np  
 
 class Drone(Tello):
     def __init__(self):
