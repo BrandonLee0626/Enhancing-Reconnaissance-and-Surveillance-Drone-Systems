@@ -12,9 +12,9 @@ drone = Drone()
 drone.connect()
 
 print(f'The battery of the drone is {drone.get_battery()}%')
-drone_available = drone.get_battery() > 10
+drone.available = drone.get_battery() > 10
 
-if drone_available:
+if drone.available:
     drone.streamon()
 
     pygame.init()

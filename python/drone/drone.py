@@ -5,10 +5,7 @@ import numpy as np
 class Drone(Tello):
     def __init__(self):
         super().__init__()
-        if self.stream_on:
-            self.frame = self.get_frame_read().frame
-        else:
-            self.frame = np.zeros((720, 920, 3), dtype=np.uint8)
+        self.available = False
 
     def keyborad_motion_control(self):
         keys = pygame.key.get_pressed()
@@ -36,7 +33,7 @@ class Drone(Tello):
 
     def video_show(self, screen, model):
         while True:
-            frame = model(self.frame)
+            frame = model(self.get_frame_read().frame)
             surface = pygame.surfarray.make_surface(frame.swapaxes(0, 1))
 
             screen.blit(surface, (0, 0))
