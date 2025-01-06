@@ -10,7 +10,7 @@ class Drone(Tello):
         else:
             self.frame = np.zeros((720, 920, 3), dtype=np.uint8)
 
-    def motion_control(self):
+    def keyborad_motion_control(self):
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_w]:
