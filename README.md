@@ -22,5 +22,3 @@ pip install pygame
 cd python
 python pilot.py
 ```
-
-##Testing git
