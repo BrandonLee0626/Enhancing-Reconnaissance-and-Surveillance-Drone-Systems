@@ -33,8 +33,8 @@ class Drone(Tello):
                 self.land()
                 self.in_flight = False
 
-    def video_show(self, screen, model):
-        while True:
+    def video_show(self, screen, model, stop_event):
+        while not stop_event.is_set():
             frame = model(self.get_frame_read().frame)
             surface = pygame.surfarray.make_surface(frame.swapaxes(0, 1))
 
