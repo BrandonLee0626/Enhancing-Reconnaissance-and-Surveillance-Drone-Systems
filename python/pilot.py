@@ -39,9 +39,16 @@ if drone.available:
     while running:
         running = drone.in_flight
         fps.tick(60)
+    while running:
+        running = drone.in_flight
+        fps.tick(60)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
                 
         drone.keyborad_motion_control()
     
