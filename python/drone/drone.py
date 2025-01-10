@@ -10,22 +10,22 @@ class Drone(Tello):
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_w]:
-            self.move_up(20)
+            self.move_up(50)
         if keys[pygame.K_a]:
-            self.rotate_counter_clockwise(5)
+            self.rotate_counter_clockwise(15)
         if keys[pygame.K_s]:
-            self.move_down(20)
+            self.move_down(50)
         if keys[pygame.K_d]:
-            self.rotate_clockwise(5)
+            self.rotate_clockwise(15)
 
         if keys[pygame.K_UP]:
-            self.move_forward(20)
+            self.move_forward(50)
         if keys[pygame.K_DOWN]:
-            self.move_back(20)
+            self.move_back(50)
         if keys[pygame.K_LEFT]:
-            self.move_left(20)
+            self.move_left(50)
         if keys[pygame.K_RIGHT]:
-            self.move_right(20)
+            self.move_right(50)
 
         if keys[pygame.K_RETURN]:
             self.land()
