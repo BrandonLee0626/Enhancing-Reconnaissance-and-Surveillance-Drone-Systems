@@ -56,6 +56,7 @@ if drone.available:
     drone.streamoff()
 
     stop_event.set()
+    video_thread.join()
 
     pygame.quit()
     sys.exit()
