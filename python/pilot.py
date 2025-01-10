@@ -1,3 +1,5 @@
+import sys
+
 from drone.drone import Drone
 from yolo.customYOLO import customYOLO
 import pygame
@@ -31,9 +33,11 @@ if drone.available:
     video_thread.start()
 
     drone.takeoff()
+    drone.in_flight = True
 
-    running = True
+    running = drone.in_flight
     while running:
+        running = drone.in_flight
         fps.tick(60)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -42,6 +46,10 @@ if drone.available:
         drone.keyborad_motion_control()
     
     drone.land()
+    drone.streamoff()
 
+    pygame.quit()
+    sys.exit()
+    
 else:
     print("Drone is not available Please try again.")
