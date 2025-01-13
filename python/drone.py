@@ -1,4 +1,6 @@
 from djitellopy.tello import Tello
+from deep_sort_realtime.deepsort_tracker import DeepSort
+from video import tracking
 import pygame
 
 class Drone(Tello):
@@ -34,8 +36,12 @@ class Drone(Tello):
                 self.in_flight = False
 
     def video_show(self, screen, model, stop_event):
+        tracker = DeepSort(max_age=50)
+
         while not stop_event.is_set():
-            frame = model(self.get_frame_read().frame)
+            frame = self.get_frame_read().frame
+            results = model(frame)
+            frame = tracking(tracker, results, frame)
             surface = pygame.surfarray.make_surface(frame.swapaxes(0, 1))
 
             screen.blit(surface, (0, 0))
