@@ -1,7 +1,7 @@
 import sys
 
-from drone.drone import Drone
-from yolo.customYOLO import customYOLO
+from drone import Drone
+from video import customYOLO
 import pygame
 import threading, time
 
