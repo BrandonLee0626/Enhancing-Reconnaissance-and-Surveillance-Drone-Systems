@@ -41,7 +41,6 @@ if drone.available:
     while running:
         if not drone.in_flight:
             break
-        fps.tick(60)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
