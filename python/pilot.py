@@ -51,7 +51,6 @@ if drone.available:
                 
         drone.keyborad_motion_control()
     
-    drone.land()
     drone.streamoff()
 
     stop_event.set()
