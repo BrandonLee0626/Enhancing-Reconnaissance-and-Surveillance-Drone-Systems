@@ -41,7 +41,7 @@ class Drone(Tello):
         while not stop_event.is_set():
             frame = self.get_frame_read().frame
             results = model(frame)
-            frame = tracking(tracker, results, frame)
+            tracker, frame = tracking(tracker, results, frame)
             surface = pygame.surfarray.make_surface(frame.swapaxes(0, 1))
 
             screen.blit(surface, (0, 0))

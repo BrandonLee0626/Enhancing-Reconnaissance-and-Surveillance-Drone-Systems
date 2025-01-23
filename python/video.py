@@ -41,4 +41,4 @@ def tracking(tracker, results, frame):
         cv2.putText(frame, str(track_id), (xmin + 5, ymin - 8),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, WHITE, 2)
     
-    return frame
+    return tracker, frame
